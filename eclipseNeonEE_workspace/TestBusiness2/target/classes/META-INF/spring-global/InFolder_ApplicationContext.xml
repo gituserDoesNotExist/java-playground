@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created on 15.03.2010 Dimensions - Versionierung $Workfile: %PM% $ $Revision: %PR% $ $Date: %Date% $ $Author: %Author% $ (c) Copyright SV Informatik 
+	GmbH 2010 -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:bdef="http://svi.de/springsupport/service"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd 
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context.xsd 
+     http://www.springframework.org/schema/jee 
+     http://www.springframework.org/schema/jee/spring-jee.xsd 
+     http://www.springframework.org/schema/tx 
+     http://www.springframework.org/schema/tx/spring-tx.xsd 
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://svi.de/springsupport/service
+     http://svi.de/springsupport/service/servicedefbean.xsd">
+
+
+	<bean id="speichernSoapClient" class="de.svi.svis3g.common.persistence.wssupport.impl.CommonSoapClientImpl">
+		<property name="webServiceTemplate" ref="webServiceTemplate" />
+		<property name="soapAction" value="anxAnlegenN01" />
+	</bean>
+
+	<bean id="aktualisierenSoapClient" class="de.svi.svis3g.common.persistence.wssupport.impl.CommonSoapClientImpl">
+		<property name="webServiceTemplate" ref="webServiceTemplate" />
+		<property name="webServiceTemplate" ref="otherBean" />
+		<property name="soapAction" value="anxSpeichernN01" />
+	</bean>
+
+	<bean id="classDefinedInXml" class="de.svi.svis3g.any.crawl.test.dependency.crawler.ClassDefinedInXml">
+		<property name="otherClassDefinedInXml" ref="otherClassDefinedInXml"></property>
+	</bean>
+	<bean id="otherClassDefinedInXml" class="de.svi.svis3g.any.crawl.test.dependency.crawler.OtherClassDefinedInXml" />
+
+</beans>

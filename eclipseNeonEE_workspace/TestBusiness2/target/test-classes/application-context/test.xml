@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created on 15.03.2010 Dimensions - Versionierung $Workfile: %PM% $ $Revision: %PR% $ $Date: %Date% $ $Author: %Author% $ (c) Copyright SV Informatik GmbH 2010 -->
+
+<!-- Diese ApplicationContext.xml listet alle XMLs auf, die in den globalen ApplicationContext geladen werden. Aus Gründen der Übersichtlichkeit bitte nur hier Dateien 
+	importieren, nicht in den hier aufgeführten XMLs. Außerdem bitte hier keine Beans o.ä. definieren. -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:orchestra="http://myfaces.apache.org/orchestra"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context.xsd
+     http://myfaces.apache.org/orchestra http://myfaces.apache.org/orchestra/orchestra.xsd">
+     
+     
+
+	<context:component-scan base-package="de.svi.svis3g.common.servicelocator">
+		<context:exclude-filter type="assignable" expression="de.svi.svis3g.common.presentation.SVIS3GHessianCurrentGevoReader" />
+	</context:component-scan>
+  <context:component-scan base-package="de.svi.svis3g.common.presentation">
+    <context:exclude-filter type="assignable" expression="de.svi.svis3g.common.presentation.SVIS3GHessianCurrentGevoReader" />
+  </context:component-scan>
+	<context:component-scan base-package="de.svi.common.springsupport" />
+	<context:component-scan base-package="de.svi.svis3g.common.presentation" />
+	<context:component-scan base-package="de.svi.svis3g.common.service" />
+	<context:component-scan base-package="de.svi.svis3g.common.integration" />
+	<context:component-scan base-package="de.svi.svis3g.business" />
+	<context:component-scan base-package="de.svi.svis3g.osp.integration" />
+	<context:component-scan base-package="de.svi.svis3g.adb.persistence" />
+	<context:component-scan base-package="de.svi.svis3g.vertrag.persistence" />
+	<context:component-scan base-package="de.svi.svis3g.common.persistence" />
+	<context:component-scan base-package="de.svi.svis3g.addressware.persistence" />
+	<context:component-scan base-package="de.svi.svis3g.idm.persistence" />
+	<context:component-scan base-package="de.svi.svis3g.partner" />
+	<context:component-scan base-package="de.svi.svis3g.kdf" />
+	<context:component-scan base-package="de.svi.svis3g.kdm" />
+
+
+	<import resource="classpath*:/META-INF/spring-global/CommonControllerApplicationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/CommonLifecycleApplicationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/EISIntegrationApplicationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/SVIS3GGeVoRootConfigurationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/SVIS3GGeVoSuityConfigurationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/PersistenceIcisApplicationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/EISIntegrationDruckApplicationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-global/BusinessDomainPartnerIntegrationContext.xml" />
+	<import resource="classpath*:/META-INF/spring-local/SVIS3GGeVoTestConfiguration.xml" />
+	
+
+	<bean id="usecaseEntkopplungInfo" class="de.svi.svis3g.common.model.UsecaseEntkopplungInfo" scope="conversation.manual" orchestra:conversationName="usecase" />
+	<bean id="systemEntkopplungInfo" class="de.svi.svis3g.common.model.UsecaseEntkopplungInfo" />
+	<bean id="facesMultipartParamReader" class="de.svi.svis3g.common.presentation.FacesParamReader" />
+
+	<context:component-scan base-package="de.svi.svis3g.common.antragverwaltung.wsclient" />
+
+
+	<!-- <bean id="orderService" class="de.svi.svis3g.test.OrderServiceImpl"> -->
+	<!-- </bean> -->
+	<bean id="tokenMessageHeaderBuilder" class="de.svi.common.ws.MessageHeaderBuilder">
+		<constructor-arg index="0" value="${env.ws.consumer.senderFQN.TokenverwaltungPort1}" />
+	</bean>
+
+
+</beans>
