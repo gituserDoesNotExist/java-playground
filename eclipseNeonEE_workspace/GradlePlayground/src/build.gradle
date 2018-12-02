@@ -1,5 +1,0 @@
-task myothertask {
-	doLast {
-		println 'hello world'
-	}
-}

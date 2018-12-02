@@ -1,2 +1,6 @@
 eclipseNeonEE_workspace/.metadata
 eclipseNeonEE_workspace/.recommenders
+
+*/target/*
+
+
