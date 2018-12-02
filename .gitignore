@@ -3,4 +3,10 @@ eclipseNeonEE_workspace/.recommenders
 
 */target/*
 
+*/.settings/
+
+*/.project/
+
+*/.claspath/
+
 
