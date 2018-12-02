@@ -1,12 +1,12 @@
 eclipseNeonEE_workspace/.metadata
 eclipseNeonEE_workspace/.recommenders
 
-*/target/*
 
-*/.settings/
+target/
 
 */.project
 
+*/.settings
 */.classpath
 
 
