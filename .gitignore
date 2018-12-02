@@ -5,8 +5,8 @@ eclipseNeonEE_workspace/.recommenders
 
 */.settings/
 
-*/.project/
+*/.project
 
-*/.claspath/
+*/.classpath
 
 
