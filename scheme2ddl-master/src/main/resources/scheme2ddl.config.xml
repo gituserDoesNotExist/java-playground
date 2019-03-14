@@ -11,14 +11,14 @@
     <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
         <property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe"/>
         <!-- You can choose a DBA user. For example: value="sys as sysdba" -->
-        <property name="user" value="playground"/>
-        <property name="password" value="playground"/>
+        <property name="user" value="dietplan"/>
+        <property name="password" value="dietplan"/>
         <property name="connectionCachingEnabled" value="true"/>
     </bean>
 
     <!-- list of schema for processing, used only if oracle user connected as sysdba-->
     <util:list id="schemaList">
-        <value>PLAYGROUND</value>
+        <value>DIETPLAN</value>
         <!--<value>HR</value>-->
     </util:list>
 
@@ -30,7 +30,7 @@
     </bean>
 
     <bean id="writer" class="com.googlecode.scheme2ddl.UserObjectWriter">
-        <property name="outputPath" value="output"/>
+        <property name="outputPath" value="/home/manfredbeutel/java/sht"/>
     </bean>
 
 
