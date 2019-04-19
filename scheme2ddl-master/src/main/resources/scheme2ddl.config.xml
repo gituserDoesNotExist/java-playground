@@ -30,7 +30,7 @@
     </bean>
 
     <bean id="writer" class="com.googlecode.scheme2ddl.UserObjectWriter">
-        <property name="outputPath" value="/home/manfredbeutel/java/sht"/>
+        <property name="outputPath" value="/home/manfredbeutel/java-sht/projects/es-dietplan/additional-shit/backup-plsql-files/" />
     </bean>
 
 
