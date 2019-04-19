@@ -30,7 +30,7 @@
     </bean>
 
     <bean id="writer" class="com.googlecode.scheme2ddl.UserObjectWriter">
-        <property name="outputPath" value="/home/manfredbeutel/java-sht/projects/es-dietplan/additional-shit/backup-plsql-files/" />
+        <property name="outputPath" value="/home/manfredbeutel/java-sht/projects/es-dietplan/plsql/" />
     </bean>
 
 
@@ -51,7 +51,7 @@
     <bean id="ddlFormatter" class="com.googlecode.scheme2ddl.DDLFormatter">
         <!-- Check it to true if you don't want apply formatting on DMBS_OUTPUT. -->
         <property name="noFormat" value="false"/>
-        <property name="isMorePrettyFormat" value="false"/>
+        <property name="isMorePrettyFormat" value="true"/>
         <property name="sortCreateIndexStatements" value="true"/>
     </bean>
 
